@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <script src="htmx.min.js"></script>
+    </head>
+    <body>
+        <div hx-ext="ws" ws-connect="127.0.0.1:5500">
+            <div id="notifications"></div>
+            <div id="chat_room">
+                Hello World!
+            </div>
+            
+            <div id="parent-div">
+                <button hx-post="/clicked"
+                    hx-trigger="click"
+                    hx-target="#parent-div"
+                    hx-swap="outerHTML"
+                >
+                    Click Me!
+                </button>
+            </div>
+
+            <div id="parent">
+                <button hx-get="/clicky"
+                    hx-trigger="click"
+                    hx-target="#parent"
+                    hx-swap="outerHTML"
+                >
+                    Click Me!
+                </button>
+            </div>
+
+            </div>
+            <form id="form" ws-send>
+                <input name="chat_message">
+            </form>
+        </div>
+    </body>
+</html>
