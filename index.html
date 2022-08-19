@@ -1,16 +1,22 @@
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="static/css/index.css" />
         <script src="htmx.min.js"></script>
+
     </head>
-    <body>
-        <div hx-ext="ws" ws-connect="127.0.0.1:5500">
-            <div id="notifications"></div>
-            <div id="chat_room">
-                Hello World!
-            </div>
-            
+
+    <body id="page-body">
+
+        <div id="chat_room" class="m-28 mb-12">
+            <h1 class="text-4xl"> HTMX is pretty cool </h1>
+            <p>Try some of the examples below:</p>
+        </div>
+
+        <div class="flex center mx-28">
+
             <div id="parent-div">
-                <button hx-post="/clicked"
+                <button class="rounded bg-purple-600 p-4 text-white m-4"
+                    hx-get="/click_me"
                     hx-trigger="click"
                     hx-target="#parent-div"
                     hx-swap="outerHTML"
@@ -20,19 +26,42 @@
             </div>
 
             <div id="parent">
-                <button hx-get="/clicky"
+                <button class="rounded bg-purple-600 p-4 text-white m-4"
+                    hx-get="/get_echo"
                     hx-trigger="click"
-                    hx-target="#parent"
+                    hx-target="#form-space"
                     hx-swap="outerHTML"
                 >
-                    Click Me!
+                    Get echo form!
                 </button>
             </div>
 
+            <div id="parenty">
+                <button 
+                    class="rounded bg-purple-600 p-4 text-white m-4"
+                    hx-get="/hello_world"
+                    hx-trigger="click"
+                    hx-target="#parenty"
+                    hx-swap="outerHTML"
+                >
+                    Run Hello World
+                </button>
             </div>
-            <form id="form" ws-send>
-                <input name="chat_message">
-            </form>
+
+            <button class="rounded bg-purple-600 p-4 text-white m-4"
+                hx-get="/load_dashboard"
+                hx-trigger="click"
+                hx-target="#page-body"
+                hx-swap="outerHTML"
+            >
+                Load TailwindUI Dashboard
+            </button>
+
+        </div>
+
+        
+        <div id="form-space">
+
         </div>
     </body>
 </html>
