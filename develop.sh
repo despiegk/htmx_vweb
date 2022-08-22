@@ -6,7 +6,7 @@ fi
 
 # compiles tailwind css & launches locally
 rm -rf public static/css
-./tailwindcss -i css/index.css -o ./static/css/index.css --watch &
+./tailwindcss -i css/index.css -o ./static/css/index.css --watch & v run server.v
 
 # compiles tailwind css for prod & builds project
 ./tailwindcss -i css/index.css -o ./static/css/index.css --minify

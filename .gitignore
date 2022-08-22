@@ -8,3 +8,6 @@ server
 *.dll
 vls.log
 static/*
+tailwindcss
+tailwind.config.js
+htmx.min.js
