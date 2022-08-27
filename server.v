@@ -48,10 +48,10 @@ pub fn (mut app App) index() vweb.Result {
 
 pub fn (mut app App) click_me() vweb.Result {
 	println('running')
-	mut ws_client := start_client() or { return app.text('Error creating websocket client') }
-	mut tw2_client := tw2.init_client(mut ws_client) // repeated calls to init_client will return the same twin client if the ws_client is the same.
-	mut twin := tw2_client.get_twin(414) or { return app.text('errr2') }
-	return app.text('I am not longer an buttony yo ijyo yo yocubba okvollokoko okok ok y')
+	// mut ws_client := start_client() or { return app.text('Error creating websocket client') }
+	// mut tw2_client := tw2.init_client(mut ws_client) // repeated calls to init_client will return the same twin client if the ws_client is the same.
+	// mut twin := tw2_client.get_twin(414) or { return app.text('errr2') }
+	return app.text('I am not longer an button')
 }
 
 pub fn (mut app App) get_echo() vweb.Result {
